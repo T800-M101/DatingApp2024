@@ -14,7 +14,6 @@ import { HomeComponent } from "./home/home.component";
 export class AppComponent implements OnInit {
   private accountService = inject(AccountService);
   currentUser!:string;
-  username!:string;
 
   ngOnInit(): void {
     this.setCurrentUser();
@@ -26,9 +25,6 @@ export class AppComponent implements OnInit {
     if ( !userString ) return;
     const user = JSON.parse(userString); 
     this.accountService.currentUser.set(user);
-    
-    // Pass the name of the user as an input to show it in the navbar
-    this.username = user.username.charAt(0).toUpperCase() + user.username.slice(1); 
   }
   
 }
