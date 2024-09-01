@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -20,7 +20,7 @@ export class NavComponent  {
   private toastr = inject(ToastrService);
 
   model: any = {};
-  
+
   login(): void {
     if (!this.isValidModel(this.model)) return;
     this.accountService.login(this.model).subscribe({
