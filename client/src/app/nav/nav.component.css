@@ -1,0 +1,11 @@
+
+a {
+    color:#ffffff;
+}
+.nav-link, .dropdown {
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+}
