@@ -22,7 +22,10 @@ export class NavComponent  {
   model: any = {};
 
   login(): void {
-    if (!this.isValidModel(this.model)) return;
+    if (!this.isValidModel(this.model)) {
+      this.toastr.error('Please provide your username and password');
+      return;
+    } 
     this.accountService.login(this.model).subscribe({
       next: _ => this.router.navigateByUrl('/members'),
       error: error => {
