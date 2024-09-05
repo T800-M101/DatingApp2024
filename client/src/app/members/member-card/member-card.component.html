@@ -3,7 +3,7 @@
         <img src="{{ member().photoUrl || './assets/user.png' }}" alt="{{ member().knownAs }}" class="card-img-top">
 
         <div class="bt-list animate">
-            <button class="bt"><i class="fa fa-user" routerLink="/members/{{member().username}}"></i></button>
+            <button class="bt" routerLink="/members/{{member().userName}}"><i class="fa fa-user"></i></button>
             <button class="bt"><i class="fa fa-heart"></i></button>
             <button class="bt"><i class="fa fa-envelope"></i></button>
         </div>
