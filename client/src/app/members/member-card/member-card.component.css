@@ -1,0 +1,52 @@
+/* .card {
+    width: 210px;
+    
+} */
+.card:hover img {
+    transform: scale(1.2, 1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+.card img {
+    transform: scale(1.0, 1.0);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.card-img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+
+.card-img-wrapper:hover .bt-list {
+    bottom: 15px;
+    opacity: 1;
+}
+
+.animate {
+    transition: all 0.3s ease-in-out;
+}
+
+.bt-list {
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    position: absolute;
+    bottom: -40px;
+    opacity: 0;
+}
+
+.bt {
+    width: 45px;
+    height: 40px;
+    background-color: #e83283;
+    border: none;
+    border-radius: 5px;
+}
+
+i {
+    color:#ffffff;
+}
