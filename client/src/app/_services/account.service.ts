@@ -17,8 +17,7 @@ export class AccountService {
     return this.http.post<User>(url, model).pipe(
       map( user => {
         if ( user ) {
-          localStorage.setItem('user', JSON.stringify(user));
-          this.currentUser.set(user);
+          this.setCurrentUser(user);
         }
         return user;
       })
@@ -36,17 +35,23 @@ export class AccountService {
     return this.http.post<User>(url, model).pipe(
       map( user => {
         if ( user ) {
-          localStorage.setItem('user', JSON.stringify(user));
-          this.currentUser.set(user);
+          this.setCurrentUser(user);
         }
         return user;
       })
     )
   }
   
+  setCurrentUser(user:User): void {
+    localStorage.setItem('user', JSON.stringify(user));
+    this.currentUser.set(user);
+  }
+  
   getUsers(): Observable<any> {
     const url = this.baseUrl + 'users';
     return this.http.get(url);
   }
+
+
 
 }
